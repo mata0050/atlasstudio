@@ -12,31 +12,4 @@ CREATE TABLE users (
   avatar VARCHAR,
   created_at TIMESTAMP, 
   role VARCHAR(255) NOT NULL DEFAULT 'Student'
-);
-
--- 02 QUESTIONS TABLE
-CREATE TABLE questions (
-  id SERIAL PRIMARY KEY NOT NULL,
-  question TEXT NOT NULL,
-  diagram VARCHAR(255) NOT NULL,
-  subject VARCHAR(255) NOT NULL,
-  level VARCHAR(255) NOT NULL,
-  answer_a  TEXT NOT NULL,
-  answer_b  TEXT NOT NULL,
-  answer_c  TEXT NOT NULL,
-  answer_d  TEXT NOT NULL,
-  correct_answer VARCHAR(255) NOT NULL
-
-);
-
--- 03 QUIZ TABLE
-CREATE TABLE quiz (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  score INTEGER NOT NULL,
-  total_questions INTEGER NOT NULL
-);
-
-
-
+)
