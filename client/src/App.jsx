@@ -9,12 +9,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import { loadUser } from './features/auth/authSlice';
 
+// CSS
+import './css/base-style.css';
 
 // Components
-
 import Login from './pages/Login';
 import Register from './pages/Register';
-
 
 function App() {
   const dispatch = useDispatch();
@@ -23,20 +23,20 @@ function App() {
   useEffect(() => {
     dispatch(loadUser());
   }, [loadUser]);
-  
-  return (
-    <>
-      <Router>
 
+  return (
+    <div>
+      <Router>
         <ToastContainer />
-        <Routes>
-          <Route path='/' element={<h1>home</h1>} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-    
-        </Routes>
+        <div className='section-max-1380px'>
+          <Routes>
+            <Route path='/' element={<h1>home</h1>} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Routes>
+        </div>
       </Router>
-    </>
+    </div>
   );
 }
 
