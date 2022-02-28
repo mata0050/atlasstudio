@@ -50,70 +50,74 @@ function Login() {
 
   return (
     <StyledLogin>
-      <div className='login'>
-        <section>
-          <h1>Login</h1>
-        </section>
+      <div className='login box-shadow'>
+        <h2>Welcome to Wiki Yoga</h2>
 
-        <section>
-          <form onSubmit={onSubmit}>
-            <div className='form-group'>
-              <label htmlFor='email'> Email</label>
-              <input
-                className='form-control'
-                type='email'
-                name='email'
-                id='Email'
-                placeholder='Email'
-                autoComplete='off'
-                value={email}
-                onChange={onChange}
-                required
-              />
-            </div>
-            <div className='form-group'>
-              <label htmlFor='password1'> Password</label>
-              <input
-                className='form-control'
-                type='password'
-                name='password'
-                id='password'
-                placeholder='Password'
-                autoComplete='off'
-                value={password}
-                onChange={onChange}
-                required
-              />
-            </div>
+        <form onSubmit={onSubmit}>
+          <div className='form-group'>
+            <label htmlFor='email'> Email</label>
+            <input
+              className='form-control'
+              type='email'
+              name='email'
+              id='Email'
+              placeholder='Email'
+              autoComplete='off'
+              value={email}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='password1'> Password</label>
+            <input
+              className='form-control'
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Password'
+              autoComplete='off'
+              value={password}
+              onChange={onChange}
+              required
+            />
+          </div>
 
-            <div className='form-group'>
-              <button type='submit' className='btn btn-primary start-btn'>
-                Login
-              </button>
-            </div>
-          </form>
-          <span>
-            If you don't have an account,
-            <Link to='/register'> register an account</Link>
-          </span>
-        </section>
+          <div className='form-group'>
+            <button type='submit' className='btn btn-primary start-btn'>
+              Sign In
+            </button>
+          </div>
+        </form>
+        <span className='footer'>
+          <Link to='/forget-password'> Forgot Password?</Link>
+          <Link to='/register'> Create account</Link>
+        </span>
       </div>
     </StyledLogin>
   );
 }
 const StyledLogin = styled.div`
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+  }
 
   .login {
-    height: 60vh;
+    width: 400px;
+    margin-inline: auto;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 500;
+    border-radius: 10px;
   }
 
   p {
@@ -130,23 +134,32 @@ const StyledLogin = styled.div`
       width: 100%;
       margin-bottom: 15px;
       padding-left: 8px;
+      border: none;
+      border-bottom: 1px solid #ccc;
     }
 
     button {
       margin-top: 20px;
       width: 100%;
-      border-radius: 10px;
+      border-radius: 3px;
       font-size: 1.1rem;
-      background: var(--color-orange);
+      border: none;
+      background: var(--color-darkBrown);
       color: var(--color-white);
+      padding: 10px 25px;
     }
   }
-  section {
-    span {
-      display: block;
-      margin-top: 20px;
+
+  .footer {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: var(--color-black);
       font-size: 0.9rem;
-      text-align: center;
+      cursor: pointer;
     }
   }
 `;

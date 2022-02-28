@@ -15,6 +15,7 @@ import './css/base-style.css';
 // Components
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Navbar from './components/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function App() {
   return (
     <div>
       <Router>
+        <Navbar />
         <ToastContainer />
         <div className='section-max-1380px'>
           <Routes>
