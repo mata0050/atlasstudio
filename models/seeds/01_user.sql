@@ -1,0 +1,3 @@
+INSERT INTO "public"."users" ("id", "first_name", "last_name", "email", "password", "avatar", "created_at", "role") VALUES
+(1, 'Jim', 'Admin', 'admin@test.com', '$2a$10$4ZhdJNg23p7r/Eh3DoKnGejsY7KvlBsQC1zHAPcY/aS7GEmmoREsq', '//www.gravatar.com/avatar/44743b8bd2b279942ce99736ada04b29?s=200&r=pg&d=mm', '2022-02-10 17:47:21.369', 'Admin'),
+(3, 'tim', 'ji', 'tim@test.com', '$2a$10$4I5j9UgdOkdibpOGU6qqPexfkfKnA3ZllvYEoF/hbgZ.2.LMpPbju', '//www.gravatar.com/avatar/3e9d238ffa4759324ad28cffe48344f9?s=200&r=pg&d=mm', '2022-02-10 17:50:20.85', 'Student');
