@@ -14,7 +14,7 @@ function SourcesForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>Sources</p>
+        <p className='heading'>Sources</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Sources
         </label>

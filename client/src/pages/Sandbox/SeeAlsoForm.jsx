@@ -14,7 +14,7 @@ function SeeAlsoForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>See Also</p>
+        <p className='heading'>See Also</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           See Also
         </label>

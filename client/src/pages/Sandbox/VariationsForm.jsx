@@ -15,7 +15,7 @@ function VariationsForm() {
   return (
     <StyledForm>
       <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
-        <p>Variations</p>
+        <p className='heading'>Variations</p>
         <label htmlFor='description' style={{ display: 'none' }}>Variations</label>
         <CKEditor
           id='description'

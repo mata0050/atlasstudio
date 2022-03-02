@@ -16,7 +16,7 @@ function HeadingForm() {
   return (
     <StyledForm>
       <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
-      <p>Add a Pose</p>
+      <p className='heading'>Add a Pose</p>
         <label htmlFor='title'>Yoga Pose Title</label>
         <input
           type='text'

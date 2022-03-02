@@ -14,7 +14,7 @@ function DescriptionForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>Description</p>
+        <p className='heading'>Description</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Description
         </label>

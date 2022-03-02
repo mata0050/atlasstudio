@@ -14,7 +14,7 @@ function FurtherReadingForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>Further Reading</p>
+        <p className='heading'>Further Reading</p>
         <label htmlFor='further-reading' style={{ display: 'none' }}>
           Further Reading
         </label>

@@ -14,7 +14,7 @@ function ReferenceForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>References</p>
+        <p className='heading'>References</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           References
         </label>

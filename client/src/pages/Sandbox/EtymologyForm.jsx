@@ -14,7 +14,7 @@ function EtymologyForm() {
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>Etymology and origin</p>
+        <p className='heading'>Etymology and origin</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Etymology and origin
         </label>
