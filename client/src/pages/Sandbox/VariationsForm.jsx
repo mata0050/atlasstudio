@@ -5,39 +5,28 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // CSS
 import StyledForm from './StyledForm';
 
-function HeadingForm() {
+function VariationsForm() {
   const [formData, setFormData] = useState({
-    title: '',
     selectedFile: {},
-    description: '',
+    variations: '',
   });
 
-  const { description, title } = formData;
+  const { variations } = formData;
   return (
     <StyledForm>
-      <p>Add a Pose</p>
       <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
-        <label htmlFor='title'>Yoga Pose Title</label>
-        <input
-          type='text'
-          value={title}
-          id='title'
-          placeholder='Yoga Pose Title'
-          onChange={(e) =>
-            setFormData({ ...formData, selectedFile: e.target.files[0] })
-          }
-        />
-        <label htmlFor='description'>Description</label>
+        <p>Variations</p>
+        <label htmlFor='description' style={{ display: 'none' }}>Variations</label>
         <CKEditor
           id='description'
           editor={ClassicEditor}
-          data={description}
+          data={variations}
           onChange={(event, editor) => {
             const data = editor.getData();
-            setFormData({ ...formData, description: data });
+            setFormData({ ...formData, variations: data });
           }}
         />
-        <label htmlFor='picture'>Upload a Picture</label>
+        <label htmlFor='picture'>Upload a Pictures</label>
         <input
           id='picture'
           name='file'
@@ -53,4 +42,4 @@ function HeadingForm() {
   );
 }
 
-export default HeadingForm;
+export default VariationsForm;

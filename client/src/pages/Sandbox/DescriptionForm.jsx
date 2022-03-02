@@ -5,26 +5,26 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // CSS
 import StyledForm from './StyledForm';
 
-function EtymologyForm() {
+function DescriptionForm() {
   const [formData, setFormData] = useState({
-    etymology: '',
+    description: '',
   });
 
-  const { etymology } = formData;
+  const { description } = formData;
   return (
     <StyledForm>
       <form onSubmit='' className='box-shadow'>
-        <p>Etymology and origin</p>
+        <p>Description</p>
         <label htmlFor='description' style={{ display: 'none' }}>
-          Etymology and origin
+          Description
         </label>
         <CKEditor
           id='description'
           editor={ClassicEditor}
-          data={etymology}
+          data={description}
           onChange={(event, editor) => {
             const data = editor.getData();
-            setFormData({ ...formData, etymology: data });
+            setFormData({ ...formData, description: data });
           }}
         />
 
@@ -36,4 +36,4 @@ function EtymologyForm() {
   );
 }
 
-export default EtymologyForm;
+export default DescriptionForm;
