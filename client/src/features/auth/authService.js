@@ -1,13 +1,13 @@
 import api from '../../utils/api';
 import setAuthToken from '../../utils/setAuthToken';
-const API_URL = 'auth/';
+const API_URL = 'api/';
 
 // loadUser user
 const loadUser = async () => {
   if (JSON.parse(localStorage.user).token) {
     setAuthToken(JSON.parse(localStorage.user).token);
   }
-  const response = await api.get(API_URL);
+  const response = await api.get(API_URL+'/login');
   return response.data[0];
 };
 
@@ -24,7 +24,7 @@ const register = async (userData) => {
 
 //Login user
 const login = async (userData) => {
-  const response = await api.post(API_URL, userData);
+  const response = await api.post(API_URL +'/login', userData);
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data));
