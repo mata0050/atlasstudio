@@ -7,10 +7,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use('/auth', require('./routes/auth/auth'));
-app.use('/auth/register', require('./routes/auth/register'));
-
-
+app.use('/api/login', require('./routes/auth/auth'));
+app.use('/api/register', require('./routes/auth/register'));
 
 // Error Middleware
 app.use(errorHandler);
