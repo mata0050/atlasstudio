@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // Components
 import DescriptionForm from './DescriptionForm';
 import EtymologyForm from './EtymologyForm';
+import FurtherReadingForm from './FurtherReadingForm';
 import HeadingForm from './HeadingForm';
 import ReferenceForm from './ReferenceForm';
 import SeeAlsoForm from './SeeAlsoForm';
@@ -20,13 +21,14 @@ function Sandbox() {
       <SeeAlsoForm />
       <ReferenceForm />
       <SourcesForm />
+      <FurtherReadingForm />
     </StyledSandbox>
   );
 }
 
 const StyledSandbox = styled.div`
   margin-top: 80px;
-  padding: 30px;
+  padding: 40px;
 `;
 
 export default Sandbox;
