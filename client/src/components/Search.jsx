@@ -14,10 +14,14 @@ function Search() {
     paddingBottom: '10px',
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div style={styleNav}>
       <StyledSearch>
-        <form onSubmit=''>
+        <form onSubmit={onSubmit}>
           <div className='search'>
             <input
               type='text'

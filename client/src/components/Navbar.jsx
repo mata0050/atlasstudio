@@ -28,6 +28,8 @@ const Navbar = () => {
     navigate('/');
   };
 
+  console.log(isAuthenticated)
+
   const guestLinks = (
     <ul id={showNav ? '' : 'hide'}>
       <li>
