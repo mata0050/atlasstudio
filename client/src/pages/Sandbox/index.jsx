@@ -25,7 +25,7 @@ function Sandbox() {
 }
 
 const StyledSandbox = styled.div`
-  margin-top: 0px;
+  margin-top: 80px;
   padding: 30px;
 `;
 
