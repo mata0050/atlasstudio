@@ -16,6 +16,8 @@ import './css/base-style.css';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
+import SideNavbar from './components/SideNavbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ function App() {
     <div>
       <Router>
         <Navbar />
+        <SideNavbar />
         <ToastContainer />
         <div className='section-max-1380px'>
           <Routes>

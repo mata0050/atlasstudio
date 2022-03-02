@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 
 const Navbar = () => {
-  const { isAuthenticated, role } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
@@ -31,9 +31,6 @@ const Navbar = () => {
   const guestLinks = (
     <ul id={showNav ? '' : 'hide'}>
       <li>
-        <NavLink to='/contributions'>Contributions</NavLink>
-      </li>
-      <li>
         <NavLink to='/register'>Create account</NavLink>
       </li>
       <li>
@@ -44,6 +41,9 @@ const Navbar = () => {
 
   const authLinks = (
     <ul id={showNav ? '' : 'hide'}>
+      <li>
+        <NavLink to='/contributions'>Contributions</NavLink>
+      </li>
       <li>
         <NavLink to='/' onClick={() => onLogout()}>
           Logout
