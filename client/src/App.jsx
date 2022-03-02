@@ -18,6 +18,8 @@ import Register from './pages/Auth/Register';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import SideNavbar from './components/SideNavbar';
+import Sandbox from './pages/Sandbox';
+import Search from './components/Search';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,11 +35,13 @@ function App() {
         <Navbar />
         <SideNavbar />
         <ToastContainer />
-        <div className='section-max-1380px'>
+        <div className='section'>
+          <Search />
           <Routes>
             <Route path='/' element={<h1>home</h1>} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/sandbox' element={<Sandbox />} />
           </Routes>
         </div>
       </Router>

@@ -42,6 +42,9 @@ const Navbar = () => {
   const authLinks = (
     <ul id={showNav ? '' : 'hide'}>
       <li>
+        <NavLink to='/sandbox'>Sandbox</NavLink>
+      </li>
+      <li>
         <NavLink to='/contributions'>Contributions</NavLink>
       </li>
       <li>
