@@ -7,6 +7,7 @@ import EtymologyForm from './EtymologyForm';
 import HeadingForm from './HeadingForm';
 import ReferenceForm from './ReferenceForm';
 import SeeAlsoForm from './SeeAlsoForm';
+import SourcesForm from './SourcesForm';
 import VariationsForm from './VariationsForm';
 
 function Sandbox() {
@@ -18,6 +19,7 @@ function Sandbox() {
       <VariationsForm />
       <SeeAlsoForm />
       <ReferenceForm />
+      <SourcesForm />
     </StyledSandbox>
   );
 }
