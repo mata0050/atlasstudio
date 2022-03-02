@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+// CSS
+import StyledForm from './StyledForm';
 
 function HeadingForm() {
   const [formData, setFormData] = useState({
@@ -12,7 +14,7 @@ function HeadingForm() {
 
   const { description, title } = formData;
   return (
-    <StyledHeadingForm>
+    <StyledForm>
       <h1>Add a Pose</h1>
       <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
         <label htmlFor='title'>Yoga Pose Title</label>
@@ -47,53 +49,8 @@ function HeadingForm() {
         />
         <button type='submit'>Next</button>
       </form>
-    </StyledHeadingForm>
+    </StyledForm>
   );
 }
-
-const StyledHeadingForm = styled.div`
-  margin-top: -40px;
-  h1 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  form {
-    padding: 30px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-
-    label {
-      margin: 15px 0;
-    }
-
-    .ck-editor__editable {
-      min-height: 200px !important;
-    }
-
-    input {
-      height: 35px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      padding-left: 10px;
-    }
-
-    .file-upload {
-      border: none;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 25px;
-      background: #9d4d69;
-      border: none;
-      color: var(--color-white);
-      font-size: 1.2rem;
-      border-radius: 30px;
-    }
-  }
-`;
 
 export default HeadingForm;

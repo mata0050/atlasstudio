@@ -31,9 +31,9 @@ function SideNavbar() {
 
 const StyledNav = styled.div`
   margin-top: 60px;
+  position: fixed;
   height: calc(100vh - 60px);
   background: var(--color-brown);
-  position: absolute;
   width: 200px;
   display: flex;
   flex-direction: column;
