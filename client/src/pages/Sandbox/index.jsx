@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import DescriptionForm from './DescriptionForm';
 import EtymologyForm from './EtymologyForm';
 import HeadingForm from './HeadingForm';
+import SeeAlsoForm from './SeeAlsoForm';
 import VariationsForm from './VariationsForm';
 
 function Sandbox() {
@@ -14,6 +15,7 @@ function Sandbox() {
       <EtymologyForm />
       <DescriptionForm />
       <VariationsForm />
+      <SeeAlsoForm />
     </StyledSandbox>
   );
 }
