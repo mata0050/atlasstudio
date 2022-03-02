@@ -15,8 +15,8 @@ function HeadingForm() {
   const { description, title } = formData;
   return (
     <StyledForm>
-      <p>Add a Pose</p>
       <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
+      <p>Add a Pose</p>
         <label htmlFor='title'>Yoga Pose Title</label>
         <input
           type='text'

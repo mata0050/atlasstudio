@@ -10,7 +10,7 @@ const StyledForm = styled.div`
 
   form {
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
 
@@ -19,7 +19,7 @@ const StyledForm = styled.div`
     }
 
     .ck-editor__editable {
-      min-height: 200px !important;
+      min-height: 150px !important;
     }
 
     input {
