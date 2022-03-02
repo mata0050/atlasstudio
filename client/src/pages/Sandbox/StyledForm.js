@@ -36,7 +36,7 @@ const StyledForm = styled.div`
     button {
       margin-top: 20px;
       padding: 10px 25px;
-      background: #9d4d69;
+      background: var(--color-darkBrown);
       border: none;
       color: var(--color-white);
       font-size: 1.2rem;
