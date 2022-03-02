@@ -13,8 +13,8 @@ import { loadUser } from './features/auth/authSlice';
 import './css/base-style.css';
 
 // Components
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
 import Navbar from './components/Navbar';
 
 function App() {

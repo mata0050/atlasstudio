@@ -37,7 +37,7 @@ const Navbar = () => {
         <NavLink to='/register'>Create account</NavLink>
       </li>
       <li>
-        <span>Log in</span>
+        <NavLink to='/login'>Log in</NavLink>
       </li>
     </ul>
   );
@@ -85,6 +85,7 @@ const StyledNav = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
+  height: 60px;
 
   .mobile-navbar {
     display: none;
@@ -126,6 +127,10 @@ const StyledNav = styled.nav`
     .mobile-navbar {
       display: block;
       margin-right: 30px;
+    }
+
+    i {
+      font-size: 1.8rem;
     }
 
     #hide {
