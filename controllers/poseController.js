@@ -31,7 +31,7 @@ const addPose = asyncHandler(async (req, res) => {
   } = req.body;
   const created_at = new Date();
 
-  // add quiz
+
   const { rows } = await pool.query(
     'INSERT INTO pose(   title, pose_description, pose_image, etymology_origin, description, variations, see_also, reference, sources, further_reading, author_id, video_url,created_at) VALUES( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *',
     [
