@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use('/api/login', require('./routes/auth/auth'));
 app.use('/api/register', require('./routes/auth/register'));
+app.use('/api/pose', require('./routes/api/pose'));
 
 // Error Middleware
 app.use(errorHandler);

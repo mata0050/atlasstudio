@@ -27,6 +27,7 @@ CREATE TABLE pose (
   reference TEXT,
   sources TEXT,
   further_reading TEXT,
+  video_url VARCHAR(255),
   created_at TIMESTAMP, 
   updated_at TIMESTAMP, 
   author_id  INTEGER REFERENCES users(id) ON DELETE CASCADE,
