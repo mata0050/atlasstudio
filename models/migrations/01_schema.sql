@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS users CASCADE;
-
+DROP TABLE IF EXISTS pose CASCADE;
 
 -- 01 USER TABLE
 CREATE TABLE users (
@@ -11,4 +11,24 @@ CREATE TABLE users (
   avatar VARCHAR,
   created_at TIMESTAMP, 
   role VARCHAR(255) NOT NULL DEFAULT 'user'
-)
+);
+
+
+-- 02 POSE TABLE
+CREATE TABLE pose (
+  id SERIAL PRIMARY KEY NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  pose_description TEXT,
+  pose_image VARCHAR(255),
+  etymology_origin TEXT,
+  description TEXT,
+  variations TEXT,
+  see_also TEXT,
+  reference TEXT,
+  sources TEXT,
+  further_reading TEXT,
+  created_at TIMESTAMP, 
+  updated_at TIMESTAMP, 
+  author_id  INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  approved BOOLEAN DEFAULT false
+);
