@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import parse from 'html-react-parser';
+import { useNavigate } from 'react-router-dom';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,7 +10,7 @@ import { getAllPose } from '../../features/pose/poseSlice';
 function Pose() {
   const dispatch = useDispatch();
   const { allPoses } = useSelector((state) => state.pose);
-  console.log(allPoses);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getAllPose());
@@ -29,7 +30,11 @@ function Pose() {
               {parse(pose.description)}
             </div>
           </div>
-          <button>Full Article</button>
+          <button
+            onClick={() => navigate(`/article/${pose.id}`, { state: pose })}
+          >
+            Full Article
+          </button>
         </div>
       ))}
     </StyledPose>

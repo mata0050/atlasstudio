@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import parse from 'html-react-parser';
+import { useNavigate } from 'react-router-dom';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +9,7 @@ import { getAllPose } from '../../features/pose/poseSlice';
 
 function RandomPose() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { allPoses } = useSelector((state) => state.pose);
   const [poseOfDay, setPoseOfDay] = useState([]);
 
@@ -37,7 +39,13 @@ function RandomPose() {
               {parse(poseOfDay.description)}
             </div>
           </div>
-          <button>Full Article</button>
+          <button
+            onClick={() =>
+              navigate(`/article/${poseOfDay.id}`, { state: poseOfDay })
+            }
+          >
+            Full Article
+          </button>
         </div>
       )}
     </StyledPose>

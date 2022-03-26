@@ -21,6 +21,7 @@ import SideNavbar from './components/SideNavbar';
 import Sandbox from './pages/Sandbox';
 import Search from './components/Search';
 import MainPage from './pages/MainPage';
+import Article from './pages/Article';
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/sandbox' element={<Sandbox />} />
+            <Route path='/article/:id' element={<Article />} />
           </Routes>
         </div>
       </Router>
