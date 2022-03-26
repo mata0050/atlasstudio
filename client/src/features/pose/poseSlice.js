@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import poseService from './poseService';
 
 const initialState = {
   allPoses: [],
   addPose: {
-    title: "",
+    title: '',
     pose_description: null,
     pose_image: null,
     pose_image_url: null,
@@ -76,6 +77,24 @@ export const poseSlice = createSlice({
     onChangeAddPose: (state, action) => {
       state.addPose = { ...state.addPose, ...action.payload };
     },
+    resetAddPose: (state) => {
+      state.addPose = {
+        title: '',
+        pose_description: null,
+        pose_image: null,
+        pose_image_url: null,
+        // file_pose_image: {},
+        etymology_origin: null,
+        description: null,
+        variations: null,
+        see_also: null,
+        reference: null,
+        sources: null,
+        further_reading: null,
+        video_url: null,
+        author_id: JSON.parse(localStorage.getItem('user')).userProfile.id,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -100,6 +119,13 @@ export const poseSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         //
+        if (action.payload.length !== 0) {
+          toast.success(
+            'Successful added a new pose. Admin will approve the pose before going live.'
+          );
+        } else {
+          toast.error('Please try again');
+        }
       })
       .addCase(addPose.rejected, (state, action) => {
         state.isLoading = false;
@@ -109,5 +135,5 @@ export const poseSlice = createSlice({
       });
   },
 });
-export const { reset, onChangeAddPose } = poseSlice.actions;
+export const { reset, onChangeAddPose, resetAddPose } = poseSlice.actions;
 export default poseSlice.reducer;

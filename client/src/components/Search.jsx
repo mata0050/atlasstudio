@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
-import { addPose as addPoseFunc } from '../features/pose/poseSlice';
+import {
+  addPose as addPoseFunc,
+  resetAddPose,
+} from '../features/pose/poseSlice';
 
 function Search() {
   const dispatch = useDispatch();
   const { addPose } = useSelector((state) => state.pose);
+  const { title, pose_description } = useSelector(
+    (state) => state.pose.addPose
+  );
   const [search, setSearch] = useState('');
+  const [poseState, setPoseState] = useState({});
+
+  useEffect(() => {
+    setPoseState(addPose);
+  }, []);
 
   const styleNav = {
     background: 'var(--color-white)',
@@ -24,10 +35,15 @@ function Search() {
     e.preventDefault();
   };
 
+  const postPoseToDb = () => {
+    dispatch(addPoseFunc(poseState));
+    dispatch(resetAddPose());
+  };
+
   return (
     <div style={styleNav}>
       <StyledSearch>
-        <button onClick={() => dispatch(addPoseFunc(addPose))}>Save</button>
+        <button onClick={() => postPoseToDb()}>Save</button>
         <form onSubmit={onSubmit}>
           <div className='search'>
             <input
