@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -36,6 +37,9 @@ function Search() {
   };
 
   const postPoseToDb = () => {
+    if (title === '' && pose_description === null) {
+      return toast.error('Please added a title and pose description');
+    }
     dispatch(addPoseFunc(poseState));
     dispatch(resetAddPose());
   };
