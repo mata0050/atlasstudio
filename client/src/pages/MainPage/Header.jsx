@@ -15,8 +15,7 @@ function Header() {
 }
 
 const StyledHeader = styled.header`
-  margin-top: 40px;
-  padding: 80px;
+
 
   .heading {
     padding: 20px;

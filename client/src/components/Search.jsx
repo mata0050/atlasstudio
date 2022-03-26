@@ -40,8 +40,8 @@ function Search() {
     if (title === '' && pose_description === null) {
       return toast.error('Please added a title and pose description');
     }
-    dispatch(addPoseFunc(poseState));
-    dispatch(resetAddPose());
+    dispatch(addPoseFunc(addPose));
+    // dispatch(resetAddPose());
   };
 
   return (
