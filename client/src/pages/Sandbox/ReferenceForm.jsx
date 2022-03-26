@@ -13,7 +13,7 @@ function ReferenceForm() {
   const { references } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>References</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           References
@@ -28,10 +28,7 @@ function ReferenceForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
+ 
     </StyledForm>
   );
 }

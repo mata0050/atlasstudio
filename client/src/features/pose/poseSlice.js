@@ -3,6 +3,20 @@ import poseService from './poseService';
 
 const initialState = {
   allPoses: [],
+  addPose: {
+    title: null,
+    pose_description: null,
+    pose_image: null,
+    etymology_origin: null,
+    description: null,
+    variations: null,
+    see_also: null,
+    reference: null,
+    sources: null,
+    further_reading: null,
+    video_url: null,
+    author_id: JSON.parse(localStorage.getItem('user')).userProfile.id,
+  },
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -57,6 +71,9 @@ export const poseSlice = createSlice({
       state.isError = false;
       state.message = '';
     },
+    onChangeAddPose: (state, action) => {
+      state.addPose = { ...state.addPose, ...action.payload };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -90,5 +107,5 @@ export const poseSlice = createSlice({
       });
   },
 });
-export const { reset } = poseSlice.actions;
+export const { reset, onChangeAddPose } = poseSlice.actions;
 export default poseSlice.reducer;

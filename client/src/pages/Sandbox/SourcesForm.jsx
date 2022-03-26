@@ -13,7 +13,7 @@ function SourcesForm() {
   const { sources } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>Sources</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Sources
@@ -28,10 +28,7 @@ function SourcesForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
+
     </StyledForm>
   );
 }

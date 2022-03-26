@@ -21,6 +21,7 @@ function Search() {
   return (
     <div style={styleNav}>
       <StyledSearch>
+        <button>Save</button>
         <form onSubmit={onSubmit}>
           <div className='search'>
             <input
@@ -40,6 +41,17 @@ function Search() {
 
 const StyledSearch = styled.div`
   margin: 20px 30px 0;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-right: 20px;
+    padding: 0px 15px;
+    background: #3e3e3e;
+    border: none;
+    border-radius: 8px;
+    color: var(--color-white);
+  }
 
   form {
     display: flex;

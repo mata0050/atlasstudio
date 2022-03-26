@@ -14,30 +14,29 @@ function VariationsForm() {
   const { variations } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' encType='multipart/form-data' className='box-shadow'>
-        <p className='heading'>Variations</p>
-        <label htmlFor='description' style={{ display: 'none' }}>Variations</label>
-        <CKEditor
-          id='description'
-          editor={ClassicEditor}
-          data={variations}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            setFormData({ ...formData, variations: data });
-          }}
-        />
-        <label htmlFor='picture'>Upload a Pictures</label>
-        <input
-          id='picture'
-          name='file'
-          type='file'
-          className='file-upload'
-          onChange={(e) =>
-            setFormData({ ...formData, selectedFile: e.target.files[0] })
-          }
-        />
-        <button type='submit'>Next</button>
-      </form>
+      <p className='heading'>Variations</p>
+      <label htmlFor='description' style={{ display: 'none' }}>
+        Variations
+      </label>
+      <CKEditor
+        id='description'
+        editor={ClassicEditor}
+        data={variations}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          setFormData({ ...formData, variations: data });
+        }}
+      />
+      <label htmlFor='picture'>Upload a Pictures</label>
+      <input
+        id='picture'
+        name='file'
+        type='file'
+        className='file-upload'
+        onChange={(e) =>
+          setFormData({ ...formData, selectedFile: e.target.files[0] })
+        }
+      />
     </StyledForm>
   );
 }

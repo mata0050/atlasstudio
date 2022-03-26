@@ -13,7 +13,7 @@ function SeeAlsoForm() {
   const { seeAlso } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>See Also</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           See Also
@@ -28,10 +28,7 @@ function SeeAlsoForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
+  
     </StyledForm>
   );
 }

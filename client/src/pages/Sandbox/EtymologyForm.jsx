@@ -13,7 +13,7 @@ function EtymologyForm() {
   const { etymology } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>Etymology and origin</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Etymology and origin
@@ -28,10 +28,6 @@ function EtymologyForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
     </StyledForm>
   );
 }

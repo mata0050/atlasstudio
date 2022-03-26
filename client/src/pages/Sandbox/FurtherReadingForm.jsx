@@ -13,7 +13,7 @@ function FurtherReadingForm() {
   const { furtherReading } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>Further Reading</p>
         <label htmlFor='further-reading' style={{ display: 'none' }}>
           Further Reading
@@ -28,10 +28,6 @@ function FurtherReadingForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
     </StyledForm>
   );
 }

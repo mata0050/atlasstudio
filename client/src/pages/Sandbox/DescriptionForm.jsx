@@ -13,7 +13,7 @@ function DescriptionForm() {
   const { description } = formData;
   return (
     <StyledForm>
-      <form onSubmit='' className='box-shadow'>
+
         <p className='heading'>Description</p>
         <label htmlFor='description' style={{ display: 'none' }}>
           Description
@@ -28,10 +28,8 @@ function DescriptionForm() {
           }}
         />
 
-        <button style={{ marginTop: '30px' }} type='submit'>
-          Next
-        </button>
-      </form>
+
+
     </StyledForm>
   );
 }
