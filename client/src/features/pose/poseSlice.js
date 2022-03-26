@@ -4,7 +4,7 @@ import poseService from './poseService';
 const initialState = {
   allPoses: [],
   addPose: {
-    title: null,
+    title: "",
     pose_description: null,
     pose_image: null,
     // file_pose_image: {},

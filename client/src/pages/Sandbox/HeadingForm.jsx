@@ -21,7 +21,6 @@ function HeadingForm() {
   );
 
   const [diagram, setDiagram] = useState('');
-  const [titleControl, setTitleControl] = useState('');
   const [progress, setProgress] = useState(0);
   const [diagramPath, setDiagramPath] = useState('');
   const [replaceDiagram, setReplaceDiagram] = useState(false);
@@ -77,11 +76,10 @@ function HeadingForm() {
       <label htmlFor='title'>Yoga Pose Title</label>
       <input
         type='text'
-        value={titleControl}
+        value={title}
         id='title'
         placeholder='Yoga Pose Title'
         onChange={(e) => {
-          setTitleControl(e.target.value);
           dispatch(onChangeAddPose({ title: e.target.value }));
         }}
       />
