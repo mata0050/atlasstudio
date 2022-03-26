@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { addPose as addPoseFunc } from '../features/pose/poseSlice';
+
 function Search() {
+  const dispatch = useDispatch();
+  const { addPose } = useSelector((state) => state.pose);
   const [search, setSearch] = useState('');
 
   const styleNav = {
@@ -21,7 +27,7 @@ function Search() {
   return (
     <div style={styleNav}>
       <StyledSearch>
-        <button>Save</button>
+        <button onClick={() => dispatch(addPoseFunc(addPose))}>Save</button>
         <form onSubmit={onSubmit}>
           <div className='search'>
             <input

@@ -23,11 +23,8 @@ const uploadFiles = (
   const imagePathName = uuidv4() + file.name;
   setImagePath(imagePathName);
 
-  console.log(storageLocation)
-
   const storageRef = ref(storage, `${storageLocation}/${imagePathName}`);
   const uploadTask = uploadBytesResumable(storageRef, file);
-
 
   uploadTask.on(
     'state_changed',
