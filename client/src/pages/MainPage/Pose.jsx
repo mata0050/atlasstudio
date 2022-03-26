@@ -29,6 +29,7 @@ function Pose() {
               {parse(pose.description)}
             </div>
           </div>
+          <button>Full Article</button>
         </div>
       ))}
     </StyledPose>
@@ -63,6 +64,20 @@ const StyledPose = styled.div`
           margin: 10px 0;
           font-size: 1.1rem;
         }
+      }
+    }
+
+    button {
+      margin: 0 10px 10px 10px;
+      font-size: 1rem;
+      padding: 5px 15px;
+      cursor: pointer;
+      background-color: #f1f0f0;
+      border-radius: 8px;
+      border: .5px solid;
+
+      :hover{
+        background-color: #ddd6d6;
       }
     }
   }
