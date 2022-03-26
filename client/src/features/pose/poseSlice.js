@@ -7,6 +7,7 @@ const initialState = {
     title: null,
     pose_description: null,
     pose_image: null,
+    // file_pose_image: {},
     etymology_origin: null,
     description: null,
     variations: null,

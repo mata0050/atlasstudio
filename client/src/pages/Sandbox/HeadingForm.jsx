@@ -21,14 +21,27 @@ function HeadingForm() {
   );
 
   const [diagram, setDiagram] = useState('');
+  const [titleControl, setTitleControl] = useState('');
   const [progress, setProgress] = useState(0);
   const [diagramPath, setDiagramPath] = useState('');
   const [replaceDiagram, setReplaceDiagram] = useState(false);
 
-
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
+    console.log(file);
+    dispatch(
+      onChangeAddPose({
+        file_pose_image: {
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          // lastModifiedDate: file.lastModifiedDate,
+          lastModifiedTime: file.lastModified,
+          webkitRelativePath: file.webkitRelativePath,
+        },
+      })
+    );
     if (
       file.type !== 'image/jpeg' &&
       file.type !== 'image/png' &&
@@ -42,7 +55,6 @@ function HeadingForm() {
     if (diagram) {
       deleteFiles(diagramPath, `pose`);
     }
-
 
     uploadFiles(
       file,
@@ -65,10 +77,13 @@ function HeadingForm() {
       <label htmlFor='title'>Yoga Pose Title</label>
       <input
         type='text'
-        value={title}
+        value={titleControl}
         id='title'
         placeholder='Yoga Pose Title'
-        onChange={(e) => dispatch(onChangeAddPose({ title: e.target.value }))}
+        onChange={(e) => {
+          setTitleControl(e.target.value);
+          dispatch(onChangeAddPose({ title: e.target.value }));
+        }}
       />
       <label htmlFor='description'>Description</label>
       <CKEditor

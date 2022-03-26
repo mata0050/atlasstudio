@@ -15,13 +15,13 @@ function Sandbox() {
   return (
     <StyledSandbox>
       <HeadingForm />
-      <EtymologyForm />
+      {/* <EtymologyForm />
       <DescriptionForm />
       <VariationsForm />
       <SeeAlsoForm />
       <ReferenceForm />
       <SourcesForm />
-      <FurtherReadingForm />
+      <FurtherReadingForm /> */}
     </StyledSandbox>
   );
 }
