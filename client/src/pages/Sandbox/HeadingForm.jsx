@@ -67,8 +67,10 @@ function HeadingForm() {
   };
 
   useEffect(() => {
-    dispatch(onChangeAddPose({ pose_image: diagram }));
-  }, [diagram, dispatch, replaceDiagram]);
+    dispatch(
+      onChangeAddPose({ pose_image: diagram, pose_image_url: diagramPath })
+    );
+  }, [diagram, diagramPath, dispatch, replaceDiagram]);
 
   return (
     <StyledForm>
