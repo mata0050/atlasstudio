@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // Components
 import Header from './Header';
 import Pose from './Pose';
+import RandomPose from './RandomPose';
 
 function MainPage() {
   return (
@@ -11,6 +12,7 @@ function MainPage() {
       <Header />
       <div className='main-container'>
         <Pose />
+        <RandomPose />
       </div>
     </StyledMainPage>
   );

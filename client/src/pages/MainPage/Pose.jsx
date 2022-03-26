@@ -18,7 +18,7 @@ function Pose() {
   return (
     <StyledPose>
       {allPoses.map((pose) => (
-        <div className='pose'>
+        <div className='pose' key={pose.id}>
           <h2>{pose.title}</h2>
           <div className='pose-container'>
             <img src={pose.pose_image} alt={pose.title} />
@@ -46,6 +46,10 @@ const StyledPose = styled.div`
       font-size: 1rem;
     }
 
+    p {
+      font-size: 0.95rem;
+    }
+
     .pose-container {
       padding: 10px;
       display: flex;
@@ -57,7 +61,7 @@ const StyledPose = styled.div`
       }
 
       .description {
-        max-height: 150px;
+        max-height: 155px;
         padding-left: 20px;
         overflow: hidden;
         h3 {
@@ -74,9 +78,9 @@ const StyledPose = styled.div`
       cursor: pointer;
       background-color: #f1f0f0;
       border-radius: 8px;
-      border: .5px solid;
+      border: 0.5px solid;
 
-      :hover{
+      :hover {
         background-color: #ddd6d6;
       }
     }
