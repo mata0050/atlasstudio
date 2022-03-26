@@ -43,7 +43,6 @@ function HeadingForm() {
       deleteFiles(diagramPath, `pose`);
     }
 
-    console.log(file)
 
     uploadFiles(
       file,
@@ -54,8 +53,6 @@ function HeadingForm() {
       `pose`
     );
     setReplaceDiagram(!replaceDiagram);
-
-    console.log(diagram)
   };
 
   useEffect(() => {

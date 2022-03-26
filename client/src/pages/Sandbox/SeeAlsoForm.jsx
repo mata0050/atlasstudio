@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { onChangeAddPose } from '../../features/pose/poseSlice';
+
 
 // CSS
 import StyledForm from './StyledForm';
 
 function SeeAlsoForm() {
-  const [formData, setFormData] = useState({
-    seeAlso: '',
-  });
+  const dispatch = useDispatch();
+  const { see_also } = useSelector(
+    (state) => state.pose.addPose
+  );
 
-  const { seeAlso } = formData;
   return (
     <StyledForm>
 
@@ -21,10 +27,10 @@ function SeeAlsoForm() {
         <CKEditor
           id='description'
           editor={ClassicEditor}
-          data={seeAlso}
+          data={see_also}
           onChange={(event, editor) => {
             const data = editor.getData();
-            setFormData({ ...formData, seeAlso: data });
+            dispatch(onChangeAddPose({ see_also: data }));
           }}
         />
 

@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { onChangeAddPose } from '../../features/pose/poseSlice';
 
 // CSS
 import StyledForm from './StyledForm';
 
 function SourcesForm() {
-  const [formData, setFormData] = useState({
-    sources: '',
-  });
+  const dispatch = useDispatch();
+  const { sources } = useSelector(
+    (state) => state.pose.addPose
+  );
 
-  const { sources } = formData;
+
   return (
     <StyledForm>
 
@@ -24,7 +29,7 @@ function SourcesForm() {
           data={sources}
           onChange={(event, editor) => {
             const data = editor.getData();
-            setFormData({ ...formData, sources: data });
+            dispatch(onChangeAddPose({ sources: data }));
           }}
         />
 
