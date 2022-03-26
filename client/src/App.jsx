@@ -20,6 +20,7 @@ import Dashboard from './pages/Dashboard';
 import SideNavbar from './components/SideNavbar';
 import Sandbox from './pages/Sandbox';
 import Search from './components/Search';
+import MainPage from './pages/MainPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function App() {
         <div className='section'>
           <Search />
           <Routes>
-            <Route path='/' element={<h1>home</h1>} />
+            <Route path='/' element={<MainPage />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/sandbox' element={<Sandbox />} />
