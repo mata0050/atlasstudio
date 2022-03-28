@@ -4,6 +4,7 @@ const auth = require('../../middleware/authMiddleware');
 const {
   addPose,
   getAllPose,
+  addNote
 } = require('../../controllers/poseController');
 
 // Connect to DB
@@ -18,5 +19,11 @@ router.get('/', getAllPose);
 // @desc     ADD pose to database
 // @access   Private
 router.post('/', auth, addPose);
+
+
+// @route    POST /api/pose
+// @desc     ADD pose to database
+// @access   Private
+router.post('/note', auth, addNote);
 
 module.exports = router;

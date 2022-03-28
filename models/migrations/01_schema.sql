@@ -45,3 +45,9 @@ CREATE TABLE pose_variation_images (
   image VARCHAR(255),
   image_url VARCHAR(255)
 );
+
+
+CREATE TABLE note (
+  id SERIAL PRIMARY KEY NOT NULL,
+  note TEXT,
+);
