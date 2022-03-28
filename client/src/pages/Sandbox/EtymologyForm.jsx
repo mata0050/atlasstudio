@@ -1,6 +1,5 @@
 import React from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { RichTextEditor } from '@mantine/rte';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +7,9 @@ import { onChangeAddPose } from '../../features/pose/poseSlice';
 
 // CSS
 import StyledForm from './StyledForm';
+
+// Utils
+import handleImageUpload from '../../utils/handleImageUpload';
 
 function EtymologyForm() {
   const dispatch = useDispatch();
@@ -19,14 +21,14 @@ function EtymologyForm() {
       <label htmlFor='description' style={{ display: 'none' }}>
         Etymology and origin
       </label>
-      <CKEditor
-        id='description'
-        editor={ClassicEditor}
-        data={etymology_origin}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          dispatch(onChangeAddPose({ etymology_origin: data }));
-        }}
+
+      <RichTextEditor
+        value={etymology_origin}
+        onChange={(data) =>
+          dispatch(onChangeAddPose({ etymology_origin: data }))
+        }
+        onImageUpload={(file) => handleImageUpload(file, 'pose', null)}
+        style={{ miHeight: '150px', marginTop: '15px' }}
       />
     </StyledForm>
   );

@@ -9,28 +9,30 @@ import Description from './Description';
 import Variations from './Variations';
 import SeeAlso from './SeeAlso';
 import FurtherReading from './FurtherReading';
+import Contents from './Contents';
 
 function Article() {
   const location = useLocation();
   const article = location.state;
 
-  console.log(article);
-  console.log('first');
   return (
     <StyledArticle>
-      Article
-      <Heading article={article} />
-      <Etymology article={article} />
-      <Description article={article} />
-      <Variations article={article} />
-      <SeeAlso article={article} />
-      <FurtherReading article={article} />
+      <Contents />
+      <div>
+        <Heading article={article} />
+        <Etymology article={article} />
+        <Description article={article} />
+        <Variations article={article} />
+        <SeeAlso article={article} />
+        <FurtherReading article={article} />
+      </div>
     </StyledArticle>
   );
 }
 
 const StyledArticle = styled.div`
-  margin: 50px;
+  margin-top: 60px;
   padding: 60px;
+  display: flex;
 `;
 export default Article;

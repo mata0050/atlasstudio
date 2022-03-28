@@ -1,6 +1,5 @@
 import React from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { RichTextEditor } from '@mantine/rte';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +7,9 @@ import { onChangeAddPose } from '../../features/pose/poseSlice';
 
 // CSS
 import StyledForm from './StyledForm';
+
+// Utils
+import handleImageUpload from '../../utils/handleImageUpload';
 
 function DescriptionForm() {
   const dispatch = useDispatch();
@@ -19,14 +21,12 @@ function DescriptionForm() {
       <label htmlFor='description' style={{ display: 'none' }}>
         Description
       </label>
-      <CKEditor
-        id='description'
-        editor={ClassicEditor}
-        data={description}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          dispatch(onChangeAddPose({ description: data }));
-        }}
+
+      <RichTextEditor
+        value={description}
+        onChange={(data) => dispatch(onChangeAddPose({ description: data }))}
+        onImageUpload={(file) => handleImageUpload(file, 'pose', null)}
+        style={{ miHeight: '150px', marginTop: '15px' }}
       />
     </StyledForm>
   );

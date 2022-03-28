@@ -4,8 +4,9 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^32.0.0",
-    "@ckeditor/ckeditor5-react": "^4.0.0",
+    "@mantine/core": "^4.1.0",
+    "@mantine/hooks": "^4.1.0",
+    "@mantine/rte": "^4.1.0",
     "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { RichTextEditor } from '@mantine/rte';
 import { toast } from 'react-toastify';
 
 // Redux
@@ -14,12 +13,14 @@ import deleteFiles from '../../firebase/deleteFiles';
 // CSS
 import StyledForm from './StyledForm';
 
+// Utils
+import handleImageUpload from '../../utils/handleImageUpload';
+
 function HeadingForm() {
   const dispatch = useDispatch();
   const { title, pose_description } = useSelector(
     (state) => state.pose.addPose
   );
-
   const [diagram, setDiagram] = useState('');
   const [progress, setProgress] = useState(0);
   const [diagramPath, setDiagramPath] = useState('');
@@ -85,15 +86,13 @@ function HeadingForm() {
           dispatch(onChangeAddPose({ title: e.target.value }));
         }}
       />
-      <label htmlFor='description'>Description</label>
-      <CKEditor
-        id='description'
-        editor={ClassicEditor}
-        data={pose_description}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          dispatch(onChangeAddPose({ pose_description: data }));
-        }}
+      <RichTextEditor
+        value={pose_description}
+        onChange={(data) =>
+          dispatch(onChangeAddPose({ pose_description: data }))
+        }
+        onImageUpload={(file) => handleImageUpload(file, 'pose', null)}
+        style={{ miHeight: '150px', marginTop: '15px', marginBottom: '25px' }}
       />
 
       {replaceDiagram && progress === 100 ? (
