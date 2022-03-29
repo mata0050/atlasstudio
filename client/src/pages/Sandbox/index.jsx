@@ -26,7 +26,7 @@ function Sandbox() {
   }, [dispatch, user.id]);
   return (
     <StyledSandbox>
-      <p className='red'>
+      <p className='red' style={{ marginBottom: '20px' }}>
         Need to work on clear the form after saving a pose and redirect user to
         contributions{' '}
       </p>
