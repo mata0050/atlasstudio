@@ -17,15 +17,19 @@ import VariationsForm from './VariationsForm';
 
 function Sandbox() {
   const dispatch = useDispatch();
-  const {user}= useSelector((state) => state.auth);
-  
-  console.log(user)
+  const { user } = useSelector((state) => state.auth);
+
+  console.log(user);
 
   useEffect(() => {
     dispatch(onChangeAddPose({ author_id: user.id }));
   }, [dispatch, user.id]);
   return (
     <StyledSandbox>
+      <p className='red'>
+        Need to work on clear the form after saving a pose and redirect user to
+        contributions{' '}
+      </p>
       <HeadingForm />
       <EtymologyForm />
       <DescriptionForm />

@@ -10,25 +10,25 @@ function Contents() {
 
         <ul>
           <li>
-            <Link to='#'>Etymology and origins</Link>
+            <Link style={{color: 'red'}}  to='#'>Etymology and origins</Link>
           </li>
           <li>
-            <Link to='#'>Description</Link>
+            <Link  style={{color: 'red'}}  to='#'>Description</Link>
           </li>
           <li>
-            <Link to='#'>Variations</Link>
+            <Link style={{color: 'red'}}  to='#'>Variations</Link>
           </li>
           <li>
-            <Link to='#'>See also</Link>
+            <Link  style={{color: 'red'}} to='#'>See also</Link>
           </li>
           <li>
-            <Link to='#'>References</Link>
+            <Link style={{color: 'red'}} to='#'>References</Link>
           </li>
           <li>
-            <Link to='#'>Sources</Link>
+            <Link style={{color: 'red'}}to='#'>Sources</Link>
           </li>
           <li>
-            <Link to='#'>Further Reading</Link>
+            <Link style={{color: 'red'}}  to='#'>Further Reading</Link>
           </li>
         </ul>
       </div>

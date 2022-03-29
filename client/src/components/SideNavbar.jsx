@@ -15,14 +15,14 @@ function SideNavbar() {
         <li>
           <Link to='/'>Main Page</Link>
         </li>
-        <li>
-          <Link to='/about'>About Wiki-Yoga</Link>
+        <li >
+          <Link style={{color: 'red'}} to='/about'>About Wiki-Yoga</Link>
         </li>
         <li>
-          <Link to='/contact-us'>Contact Us</Link>
+          <Link style={{color: 'red'}}  to='/contact-us'>Contact Us</Link>
         </li>
         <li>
-          <Link to='/donate'>Donate</Link>
+          <Link style={{color: 'red'}}  to='/donate'>Donate</Link>
         </li>
       </ul>
     </StyledNav>

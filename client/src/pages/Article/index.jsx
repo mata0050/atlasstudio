@@ -19,6 +19,7 @@ function Article() {
     <StyledArticle>
       <Contents />
       <div>
+        <p className="red">Need to work on how this page will look. Still working progress.</p>
         <Heading article={article} />
         <Etymology article={article} />
         <Description article={article} />

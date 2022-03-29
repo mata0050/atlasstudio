@@ -47,7 +47,7 @@ const Navbar = () => {
         <NavLink to='/sandbox'>Sandbox</NavLink>
       </li>
       <li>
-        <NavLink to='/contributions'>Contributions</NavLink>
+        <NavLink style={{color: 'red'}} to='/contributions'>Contributions</NavLink>
       </li>
       <li>
         <NavLink to='/' onClick={() => onLogout()}>
