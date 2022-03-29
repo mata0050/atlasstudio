@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import poseService from './poseService';
 
+
+
 const initialState = {
   allPoses: [],
   addPose: {
@@ -18,7 +20,7 @@ const initialState = {
     sources: null,
     further_reading: null,
     video_url: null,
-    author_id: JSON.parse(localStorage.getItem('user')).userProfile.id,
+    author_id: null,
   },
   isError: false,
   isSuccess: false,

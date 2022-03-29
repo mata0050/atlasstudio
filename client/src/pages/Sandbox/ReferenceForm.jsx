@@ -15,6 +15,7 @@ function ReferenceForm() {
   const dispatch = useDispatch();
   const { reference } = useSelector((state) => state.pose.addPose);
 
+
   return (
     <StyledForm>
       <p className='heading'>References</p>
